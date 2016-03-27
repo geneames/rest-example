@@ -1,8 +1,6 @@
 ## rest-example  #
 Project to demonstrate knowledge of developing and testing a ReST API in Java.
 
-Live Example: http://api.pncie.io
-
 ### Specifications
 - A microservice that stores and shuffles card decks.
 - A card may be represented as a simple string such as “5-heart”, or “K-spade”.
