@@ -46,7 +46,6 @@ This application was built with Spring framework as the foundation. The build is
 	- **http://localhost/api/decks/Name+of+Deck**		
 		- HTTP Method: DELETE / Status Code: 204
 		- Input: N/A
-		- Returns: Current deck state as JSON {deckName: "Name of Deck" {cards: ["A-Spades","2-Spades",...]}}
 
 ### Configuration
 The configuration files are contained in the */resources* folders under the *main/* and *test/* folders. The *applications.properties* file is used solely to  configure logging. All other configurations are in the *application.yml* file. XML configuration files have been avoided at all costs. There are two Spring Configuration classes in the code base. These are used to initialize the proper Shuffler bean at boot-time.
