@@ -16,7 +16,7 @@ Project to demonstrate knowledge of developing and testing a ReST API in Java.
 - Persistence method and shuffle algorithm are configurable at deploy time via application properties.  
 
 ###Implementation
-This application was built with Spring framework as the foundation. The build is managed by Gradle. The distributable artifact is a Spring Boot application the can run stand-alone or can be deployed to most any J2EE compliant application server or cloud container.
+This application was built with Spring framework as the foundation. The build is managed by Gradle. The distributable artifact is a Spring Boot application that can run stand-alone or can be deployed to most any J2EE compliant application server or cloud container.
 
 ### REST Endpoints
 
