@@ -1,0 +1,46 @@
+spring:
+  profiles.active: local-datastore,random-shuffle
+
+---
+
+spring:
+  profiles: local-datastore
+
+  datasource:
+    url: jdbc:hsqldb:mem:decks
+    username: SA
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1;
+    max-active: 1
+
+  jpa:
+    database: hsql
+    show-sql: false
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.HSQLDialect
+
+---
+spring:
+  profiles: remote-datastore
+
+  datasource:
+    url: jdbc:mysql://<<host name>>:<<port>>/<<schema>>
+    username: <<user name>>
+    password: <<password>>
+    test-on-borrow: true
+    test-while-idle: true
+    validation-query: select 1;
+    max-active: 5
+
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        create-drop: true
+---
