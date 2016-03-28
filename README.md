@@ -11,7 +11,7 @@ Project to demonstrate knowledge of developing and testing a ReST API in Java.
 	- GET a list of the current decks persisted in the service.
 	- GET a named deck in its current sorted/shuffled order.
 	- DELETE a named deck.
-- Two shuffle algorithms, one random shuffle, the other that simulates "hand shuffle" by splitting the deck and interleaving cards multiple time.
+- Two shuffle algorithms, one random shuffle, the other that simulates "hand shuffle" by splitting the deck and interleaving cards multiple times.
 - Deck state is persisted in memory by default. This can be changed to persisted in most any RDBMS via JDBC configuration.
 - Persistence method and shuffle algorithm are configurable at deploy time via application properties.  
 
