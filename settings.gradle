@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'mb-rest'
+rootProject.name = 'rest-example'
