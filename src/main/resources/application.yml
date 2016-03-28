@@ -1,5 +1,5 @@
 spring:
-  profiles.active: local-datastore,interleave-shuffle
+  profiles.active: local-datastore,random-shuffle
 
 ---
 
@@ -12,7 +12,7 @@ spring:
     test-on-borrow: true
     test-while-idle: true
     validation-query: select 1;
-    max-active: 5
+    max-active: 1
 
   jpa:
     database: hsql
@@ -27,13 +27,13 @@ spring:
   profiles: remote-datastore
 
   datasource:
-    url: jdbc:mysql://sema.ckrql5p5mo0t.us-west-2.rds.amazonaws.com:3306/deck
-    username: semaAdmin
-    password: F17ZL[gl
+    url: jdbc:mysql://<<host name>>:<<port>>/<<schema>>
+    username: <<user name>>
+    password: <<password>>
     test-on-borrow: true
     test-while-idle: true
     validation-query: select 1;
-    max-active: 2
+    max-active: 5
 
   jpa:
     database: mysql
