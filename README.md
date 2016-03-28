@@ -16,7 +16,7 @@ Project to demonstrate knowledge of developing and testing a ReST API in Java.
 - Persistence method and shuffle algorithm are configurable at deploy time via application properties.  
 
 ###Implementation
-This application was built with Spring framework as the foundation. The build is managed by Gradle. The distributable artifact is a Spring Boot application that can run stand-alone or can be deployed to most any J2EE compliant application server or cloud container.
+This application was built with Spring framework as the foundation. The build is managed by Gradle. The distributable artifact is a Spring Boot application that can run stand-alone or, with some modifications to the Gradle build file, can be deployed to most any J2EE compliant application server or cloud container.
 
 ### REST Endpoints
 
@@ -54,3 +54,24 @@ This application was built with Spring framework as the foundation. The build is
 The configuration files are contained in the */resources* folders under the *main/* and *test/* folders. The *applications.properties* file is used solely to  configure logging. All other configurations are in the *application.yml* file. XML configuration files have been avoided at all costs. There are two Spring Configuration classes in the code base. These are used to initialize the proper Shuffler bean at boot-time.
 
 Obviously, since these configuration files are in the */resources* folder, they are rolled into the WAR file at build time. The implication is if any configuration changes are desired, such as selecting a different shuffler or data source, this requires a new build. If it is desired, the configuration can be externalized. By placing the configuration files (i.e. *application.properties* and *application.yml*) in a folder named *config/* located in the ROOT context of the application, the Spring framework will recognize this as the place to retrieve configurations at boot-time.
+
+### Running the Service
+This service is a Spring Boot application, which has an embedded application server. Also, this application can be deployed to an existing application server with some modifications to the Gradle build file (See [Deploying Spring Boot Applications](https://spring.io/blog/2014/03/07/deploying-spring-boot-applications)).
+
+**Run Stand-Alone**
+
+1. Install or verify  Java 1.8 JDK is installed on the host computer.
+2. Create or verify a *JAVA_HOME* environment variable is configured.
+3. Create or verify *JAVA_HOME/bin* is in the system or shell *PATH*.
+4. Install or verify Gradle is installed on the host computer.
+5. Create or verify a *GRADLE_HOME* environment variable is configured.
+6. Clone this GitHub repository.
+7. In a shell or command prompt window, go to the */your/path/to/rest-example*
+8. At the command prompt, type *gradle bootRun*. The service should start.
+
+### Improvements or Enhancements
+This example was put together rather hastily, so there are some things missing one would like to see in a production ready application. For example:
+
+- Logging is sparse. Additional logging statements need to added at all levels of logging.
+- More robust verification of the deck state in the controller unit/integration tests.
+- A way to determine or verify the degree of "randomness" of a shuffle as compared to the previous state.
