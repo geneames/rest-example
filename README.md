@@ -22,7 +22,7 @@ This application was built with Spring framework as the foundation. The build is
 
 - Create Card Deck 
 	- **http://localhost/api/decks/**
-		- Idempotent behavior, meaning a new deck will be created if a deck with the provided deck name doesn't already exist in the database. However, if a deck in the database has the deck name requested by this operation, the deck in the database will be returned with in its current state.
+		- Idempotent behavior, meaning a new deck will be created if a deck with the provided deck name doesn't already exist in the database. However, if a deck in the database has the deck name requested by this operation, the deck in the database will be returned in its current state.
 		- HTTP Method: PUT / Status Code: 201 for created deck
 		- Input: application/x-www-form-urlencoded (deckName=Name+of+Deck)
 		- Returns: JSON {deckName: "Name of Deck" {cards: ["A-Spades","2-Spades","3-Spades",...]}} for new deck.
