@@ -21,8 +21,9 @@ This application was built with Spring framework as the foundation. The build is
 ### REST Endpoints
 
 - Create Card Deck 
-	- **http://localhost/api/decks/**		
-		- HTTP Method: PUT / Status Code: 201
+	- **http://localhost/api/decks/**
+		- Idempotent behavior, 	
+		- HTTP Method: PUT / Status Code: 201 for created deck
 		- Input: application/x-www-form-urlencoded (deckName=Name+of+Deck)
 		- Returns: JSON {deckName: "Name of Deck" {cards: ["A-Spades","2-Spades",...]}}
 - Shuffle Deck
