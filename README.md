@@ -75,3 +75,4 @@ This example was put together rather hastily, so there are some things missing o
 - Logging is sparse. Additional logging statements need to added at all levels of logging.
 - More robust verification of the deck state in the controller unit/integration tests.
 - A way to determine or verify the degree of "randomness" of a shuffle as compared to the previous state.
+- Pagination support for deck retrieval.
