@@ -41,11 +41,9 @@ public class RandomShuffler implements Shuffler {
             int randomIndex = ThreadLocalRandom.current().nextInt(0, i);
 
             // Add randomly selected card into the deck's
-            // card list.
-            deck.getCards().add(origCardList.get(randomIndex));
-
-            // Remove Card from Original Card List
-            origCardList.remove(randomIndex);
+            // card list. The List<E>.remove(index) method
+            // returns the removed element.
+            deck.getCards().add(origCardList.remove(randomIndex));
         }
     }
 }
